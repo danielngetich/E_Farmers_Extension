@@ -4,6 +4,7 @@ const FarmerSignup = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [location, setLocation] = useState('');
   const [county, setCounty] = useState('');
   const [crops, setCrops] = useState({
@@ -23,6 +24,10 @@ const FarmerSignup = () => {
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
   };
 
   const handleLocationChange = (event) => {
@@ -45,13 +50,14 @@ const FarmerSignup = () => {
     event.preventDefault();
 
     // Perform form submission logic here
-    // You can access the form data in the state variables (name, phone, email, location, county, crops)
+    // You can access the form data in the state variables (name, phone, email, password, location, county, crops)
     // and send it to an API, save it to a database, or perform any other necessary action
 
     // Reset the form fields after submission
     setName('');
     setPhone('');
     setEmail('');
+    setPassword('');
     setLocation('');
     setCounty('');
     setCrops({
@@ -78,6 +84,16 @@ const FarmerSignup = () => {
       <label>
         Email:
         <input type="email" value={email} onChange={handleEmailChange} required />
+      </label>
+      <br />
+      <label>
+        Password:
+        <input
+          type="password"
+          value={password}
+          onChange={handlePasswordChange}
+          required
+        />
       </label>
       <br />
       <label>
