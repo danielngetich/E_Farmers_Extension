@@ -29,8 +29,32 @@ const ProductPage = ({ selectedCrop }) => {
   };
 
   const handleCheckout = () => {
-    // Navigate to the admin page with the selected items
-    navigate('/admin', { state: { selectedItems } });
+    // Perform M-Pesa payment and handle success/failure
+    performMpesaPayment()
+      .then(() => {
+        // Payment successful, redirect to farmer's dashboard
+        navigate('/dashboard');
+      })
+      .catch((error) => {
+        // Payment failed, handle error
+        console.error('M-Pesa payment error:', error);
+      });
+  };
+
+  const performMpesaPayment = async () => {
+    // Implement your M-Pesa payment logic here
+    // This could involve making an API call to the payment gateway
+    // and handling the payment response
+    return new Promise((resolve, reject) => {
+      // Simulating a successful payment after a 2-second delay
+      setTimeout(() => {
+        resolve();
+      }, 2000);
+    });
+  };
+
+  const addToSelectedItems = (product) => {
+    setSelectedItems((prevItems) => [...prevItems, product]);
   };
 
   // Filter products based on selected crop
@@ -47,6 +71,7 @@ const ProductPage = ({ selectedCrop }) => {
           <li key={product.id}>
             {product.name} - ${product.price}
             <button onClick={() => handleDelete(product.id)}>Delete</button>
+            <button onClick={() => addToSelectedItems(product)}>Add to Cart</button>
           </li>
         ))}
       </ul>
