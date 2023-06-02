@@ -15,6 +15,7 @@ import {BrowserRouter, Routes, Route,} from 'react-router-dom';
 function App() {
   return (
     <div className="App">
+      <Home/>
       <BrowserRouter>
       <Routes>
       <Route path='/navbar' element={<FarmerNavbar/>} />
