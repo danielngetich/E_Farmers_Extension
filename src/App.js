@@ -1,14 +1,14 @@
 
 import './App.css';
-import AdminLogin from './components/AdminLogin';
-import AdminPage from './components/AdminPage';
-import CropDevelopment from './components/CropDevelopment';
-import FarmerDashbord from './components/FarmerDashboard';
-import FarmerLogin from './components/FarmerLogin';
+import AdminLogin from './Admin/AdminLogin.js';
+import AdminPage from './Admin/AdminPage';
+import CropDevelopment from './Farmer/CropDevelopment';
+import FarmerDashbord from './Farmer/FarmerDashboard';
+import FarmerLogin from './Farmer/FarmerLogin';
 import Home from './components/Home';
-import FarmerNavbar from './components/FarmerNavbar';
-import FarmerSignup from './components/FarmerSignup';
-import PlantDevelopment from './components/PlantDevelopment';
+import FarmerNavbar from './Farmer/FarmerNavbar';
+import FarmerSignup from './Farmer/FarmerSignup';
+import PlantDevelopment from './Farmer/PlantDevelopment';
 import ProductPage from './components/ProductPage';
 import {BrowserRouter, Routes, Route,} from 'react-router-dom';
 
